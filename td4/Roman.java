@@ -12,8 +12,10 @@ public class Roman extends Livre{
 
     @Override
     public String toString() {
-        super.toString();
-        return "nomAuteur='" + nomAuteur + '\'' +
+
+        return super.toString()+
+                this.getClass().getSimpleName()+
+                "nomAuteur='" + nomAuteur + '\'' +
                 ", nomEditeur='" + nomEditeur ;
 
     }

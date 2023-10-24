@@ -1,26 +1,26 @@
 package td4;
 
 public class Librairie {
-    private Livre[] liste;
+    public Livre[] liste;
     private int capacite;
     private static int nb=0;
 
-    public Librairie() {
+    public Librairie(int capacite) {
+        this.capacite=capacite;
         this.liste=new Livre[capacite];
-        nb++;
     }
 
     public static int getNb() {
         return nb;
     }
     public void inventaire(){
-        for(int i=0;i<capacite;i++){
+        for(int i=0;i<nb;i++){
             System.out.println(liste[i].toString());
-            System.out.println(liste[i].calculePrix());
+            System.out.println("Prix = "+liste[i].calculePrix());
         }
     }
     public void inventaire(String categ){
-        for(int i=0;i<capacite;i++){
+        for(int i=0;i<nb;i++){
             if( liste[i].domain==categ){
                 System.out.println(liste[i].toString());
             }
@@ -35,9 +35,9 @@ public class Librairie {
         }
     }
     public void suppLiv(int num) {
-        for (int i = 0; i < capacite; i++) {
+        for (int i = 0; i < nb; i++) {
             if (liste[i].identifiant == num) {
-                for (int j = i; j < capacite - 1; j++) {
+                for (int j = i; j < nb - 1; j++) {
                     liste[j] = liste[j + 1];
                 }
                 liste[nb - 1] = null;

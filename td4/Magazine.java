@@ -10,8 +10,10 @@ public class Magazine extends Livre {
 
     @Override
     public String toString() {
-        super.toString();
-        return "moisParution=" + moisParution ;
+
+        return super.toString()+
+                this.getClass().getSimpleName()+
+                "moisParution=" + moisParution ;
     }
 
 
