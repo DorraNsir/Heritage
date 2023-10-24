@@ -26,4 +26,7 @@ public class Livre {
     public double calculePrix(){
         return ((0.075 * nbPages)*(1+TVA));
     }
+    public double calculePrix(int bonus) {
+        return (0.35 * nbPages)*(1+TVA)+bonus;
+    }
 }

@@ -1,5 +1,7 @@
 package td4;
 
+import java.util.Scanner;
+
 public class Librairie {
     public Livre[] liste;
     private int capacite;
@@ -14,9 +16,18 @@ public class Librairie {
         return nb;
     }
     public void inventaire(){
+        Scanner scanner=new Scanner(System.in);
         for(int i=0;i<nb;i++){
+            if(liste[i]instanceof Magazine){
+                System.out.println("donner le bonus");
+                int bonus=scanner.nextInt();
+                System.out.println(liste[i].toString());
+                System.out.println("Prix = "+liste[i].calculePrix(bonus));
+
+            }
+            else{
             System.out.println(liste[i].toString());
-            System.out.println("Prix = "+liste[i].calculePrix());
+            System.out.println("Prix = "+liste[i].calculePrix());}
         }
     }
     public void inventaire(String categ){

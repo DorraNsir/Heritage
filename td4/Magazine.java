@@ -13,7 +13,7 @@ public class Magazine extends Livre {
 
         return super.toString()+
                 this.getClass().getSimpleName()+
-                "moisParution=" + moisParution ;
+                "  moisParution= " + moisParution ;
     }
 
 
